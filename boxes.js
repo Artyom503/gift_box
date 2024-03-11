@@ -13,7 +13,7 @@ const sumString = sums[randomIndex];
 
 // Your sentence with the random string
 const sentence = `Congratulations! You won <b>${sumString}</b>! To collect the prize use a promocode <b>${promoString}</b> at:` ;
-const message = `Congratulations! You won ${sumString}!`
+const message = `You won ${sumString}!`
 // Log the result
 //console.log(sentence);
 
@@ -41,7 +41,7 @@ const message = `Congratulations! You won ${sumString}!`
 
     // Function to handle box click
     function boxClick(boxIndex) {
-        if (!victoryAchieved && !boxStates[boxIndex]) {
+        if (!victoryAchieved && !boxStates[boxIndex]) {            
             const box = document.getElementById(`box${boxIndex}`);
             box.style.backgroundImage = `url(${closedImage})`;
             box.style.transform = 'rotateY(90deg)'; // Rotate the box for animation
@@ -51,12 +51,39 @@ const message = `Congratulations! You won ${sumString}!`
 
             // Check if the user has won every third click
             if (clickCount % 3 === 0) {
-                alert(message);
+                swal({
+                    title: "Congratulations!",
+                    text: message,                    
+                    imageUrl: "img/open.webp",
+                    confirmButtonText: "Claim",
+                    confirmButtonColor: "#74c7aa",
+                    closeOnConfirm: false
+                    
+                  },
+                  function(isConfirm){
+                    if (isConfirm) {
+                        swal({
+                            title: promoString,
+                            text: "is your promocode to enter at Gainex.io",                    
+                            confirmButtonText: "Confirm",
+                            confirmButtonColor: "#74c7aa"
+                          });
+                    }}
+                  );
+                  
                 victoryAchieved = true;
                 box.style.transform = 'rotateY(360deg)';
                 box.style.backgroundImage = `url(${openedImage})`;
                 disableBoxes(); // Disable further clicks on boxes
                 displayVictoryMessage(); // Display victory message
+            }
+            else {
+                swal({
+                    title: "Empty!",
+                    text: "Try again",                    
+                    confirmButtonText: "Ok",
+                    confirmButtonColor: "#74c7aa"
+                  });
             }
         }
     }
