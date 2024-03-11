@@ -1,0 +1,394 @@
+<!-- 
+        Developer by @TanukiCode    
+        !--><!DOCTYPE html><html lang="en" data-scrapbook-source="https://wibetopft.com/" data-scrapbook-create="20240225115943340" data-scrapbook-title="BITREAXT"><head><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GAINEX.IO Prize game</title>
+    <style>
+      .box {
+          width: 80px;
+          height: 80px;
+          display: inline-block;
+          border: 0px solid #ccc;
+          margin: 5px;
+          cursor: pointer;
+          background-size: cover;
+          transition: transform 0.3s ease-in-out; /* Animation on box opening */
+      }
+
+      .row {
+          clear: both;
+      }
+      #VicButton {
+          display: none;
+          margin-top: 50px;
+          margin-bottom: 10px;
+          font-size: 18px;
+          
+      }
+
+      #victoryMessage {
+          display: none;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          font-size: 18px;
+          
+      }
+  </style>
+    <link rel="stylesheet" href="urn:scrapbook:download:error:https://wibetopft.com/TanukiCode/css3/swiper-bundle.min.css">
+    
+    
+    <link href="css2" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.min.css">
+    <link rel="stylesheet" href="global.min.css">
+    <link rel="stylesheet" href="urn:scrapbook:download:error:https://wibetopft.com/TanukiCode/css3/fonts.min.css">
+    <link rel="stylesheet" href="header.min.css">
+    <link rel="stylesheet" href="calculator.min.css">
+    <link rel="stylesheet" href="footer.min.css">
+    <link rel="stylesheet" href="cryptocurrencies.min.css">
+    <link rel="stylesheet" href="trading.min.css">
+    <link rel="stylesheet" href="company.min.css">
+    <link rel="stylesheet" href="account.min.css">
+    <link rel="stylesheet" href="choose.min.css">
+    <link rel="stylesheet" href="urn:scrapbook:download:error:https://wibetopft.com/TanukiCode/css3/trade.min.css">
+    <link rel="stylesheet" href="home.min.css">
+    <link rel="icon" href="favicon.ico">
+	
+<!-- Facebook Pixel Code -->
+<script>
+  ! function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '<?=$_REQUEST[',pixel,']?>');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=<?=$_REQUEST['pixel']?>&ev=Lead&noscript=1" /></noscript>
+
+<!-- End Facebook Pixel Code -->
+        	
+</head>
+
+<body class="webp">
+    <div class="global__wrapper">
+        <header class="header">
+    <div class="global__container">
+        <div class="header__box">
+            <div class="header__left">
+                <div class="header__logo">
+                    <img style="width: 30px; height: 30px;" src="favicon.ico" alt="">
+                    <div class="header__logo-text">GAINEX.IO</div>
+                </div>
+            </div>
+            
+            <div class="header__btn-mobile">
+                <svg width="28" height="28" viewBox="0 0 100 100">
+                    <path class="header__nav-line header__nav-line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path>
+                    <path class="header__nav-line header__nav-line2" d="M 20,50 H 80"></path>
+                    <path class="header__nav-line header__nav-line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="home">
+  <div class="global__container">
+    <div class="home__box">
+      <div class="home__left">
+        <p>Open 3 out of 9 boxes and try your luck!!</p>
+
+<div id="boxes">
+    <!-- Boxes will be dynamically generated here -->
+</div>
+<div  id="victoryMessage"></div>
+<a class="home__link" href="https://gainex.io/" id="VicButton">
+    Gainex.io
+  </a>
+            </div>
+<script src="boxes.js"></script>
+            <div class="home__right">
+                <div class="home__phone">
+                    <picture><img src="Phone.png" alt=""></picture>
+                </div>
+                <div class="home__open">
+                    <picture><img src="open.png" alt=""></picture>
+                </div>
+                <div class="home__buy">
+                    <picture><img src="buy.png" alt=""></picture>
+                </div>
+                <div class="home__coins">
+                    <picture><img src="coins.png" alt=""></picture>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 
+        Developer by @TanukiCode    
+        !-->
+    <style type="text/css">
+    .footer {
+  background: #121212;
+}
+.footer__container {
+  max-width: 1271px;
+  padding: 80px 15px 25px 15px;
+  margin: 0 auto;
+}
+.footer__logo-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3px;
+}
+.footer__logo-icon {
+  margin-right: 15px;
+}
+.footer__logo-text {
+  font-size: 26px;
+  line-height: 30px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.footer__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 26px;
+}
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 206px;
+  width: 100%;
+  padding-top: 26px;
+  padding-right: 52px;
+}
+.footer__info {
+  max-width: 240px;
+}
+.footer__description {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  color: rgba(232, 232, 232, 0.7);
+  margin-top: 23px;
+  margin-bottom: 47px;
+}
+.footer__label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  color: rgba(232, 232, 232, 0.7);
+  margin-bottom: 17px;
+}
+.footer__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__input {
+  font-size: 12px;
+  line-height: 14px;
+  color: #A8A8A8;
+  background: #232323;
+  border: 1px solid #373737;
+  border-radius: 5px;
+  outline: none;
+  padding: 8px 10px 8px 11px;
+  max-width: 139px;
+}
+.footer__sing-up {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  padding: 7px 18px 7px 19px;
+  background: #6544C6;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.footer__link-title {
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+.footer__links-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 9px;
+}
+.footer__link {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: rgba(232, 232, 232, 0.7);
+}
+.footer__link:hover {
+  color: #fff;
+}
+.footer__bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(196, 196, 196, 0.75);
+}
+.footer__sub-text {
+  font-size: 9px;
+  line-height: 15px;
+  color: rgba(232, 232, 232, 0.7);
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .footer__links {
+    margin-left: 90px;
+    padding-right: 30px;
+  }
+  .home__frank{
+  float: left;
+  scale: 0.7;
+  width: 20%;
+  margin-right: 800px;
+  margin-top: -300px;
+
+  }
+  .home__buy{
+  z-index: 3;
+  }
+  .home__description {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 15px;
+    color: #aaabab;
+    margin-bottom: 32px;
+  }
+  .home__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 21px;
+  color: #fff;
+  }
+  .home__subtitle {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 11px;
+  color: #aaabab;
+  }
+}
+@media (max-width: 870px) {
+  .footer__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer__links {
+    margin-left: 0;
+    padding-right: 0;
+    max-width: 700px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer__logo-top {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer__info {
+    max-width: 600px;
+    text-align: center;
+  }
+  .footer__description {
+    margin-bottom: 30px;
+  }
+  .footer__wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (max-width: 550px) {
+  .footer__links {
+    -webkit-column-gap: 50px;
+       -moz-column-gap: 50px;
+            column-gap: 50px;
+    row-gap: 50px;
+    max-width: 100%;
+  }
+  .footer__links-block {
+    min-width: 90px;
+  }
+}
+
+.footer__links {
+    flex-direction: unset !important;
+}
+
+.footer__logo {
+    display: block !important;
+}
+
+.footer__logo-text {
+    margin-left: -4px !important;
+}
+</style>
+<br><br>
+
+<!-- 
+        Developer by @TanukiCode    
+        !-->
+  
+  
+  
+</div>
+
+<!-- 
+        Developer by @TanukiCode    
+        !-->
+    
+    
+    
+    
+
+</body></html>
